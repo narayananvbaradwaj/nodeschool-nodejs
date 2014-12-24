@@ -1,6 +1,16 @@
 var fs = require('fs');
+var path=require('path');
 var file = process.argv[2];
-fs.readFile(file,function Addone (err, contents) { 
-	var line=contents.toString().split('\n').length - 1; 
-console.log(line);
+var type = '.' + process.argv[3];
+fs.readdir(file,function Addone (err, list) { 
+	list.forEach(function (file){
+	if (path.extname(file)===type){
+	console.log(file);	
+	}
+	}
+
+		)
+
+
 } );
+	
